@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <style>
+
+        body{
+            background-color:gray;
+        }
+
+        .principal{
+            background-color:white;
+            margin:0 10% 0 10%;
+            float:left;
+            border-radius:15px;
+        }
+
+        header,nav,section,footer{
+            width:100%;
+            float:left;
+            height:auto;
+        }
+
+        header>h1{
+            text-align:center;
+            color:gray;
+        }
+
+        .enlace{
+            float:left;
+            min-width:19.5%;
+            max-width:20%;
+            height:25px;
+            display:inline-block;
+            border-radius:5px;
+            border:1px solid;
+            background-color:gray;
+            text-align:center;
+        }
+
+        .enlace:hover{
+            background-color:yellow;
+            color:red;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="principal">
+        <header>
+            <h1>Negocios de Comida</h1>
+        </header>
+        <nav>
+            @Html.ActionLink("Inicio", "Home",null,new {@class = "enlace"})
+            @Html.ActionLink("Menu", "Menu", null, new { @class = "enlace" })
+            @Html.ActionLink("Compra online", "Compra", null, new { @class = "enlace" })
+            @Html.ActionLink("Registros", "Registro", null, new { @class = "enlace" })
+            @Html.ActionLink("Contactenos", "Contactenos", null, new { @class = "enlace" })
+        </nav>
+        <section>
+            @RenderBody()
+        </section>
+        <footer>
+            <em>Derechos Reservados - Negocios 2019</em>
+        </footer>
+    </div>
+</body>
+</html>
